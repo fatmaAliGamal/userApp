@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Add User
+
+        // Add form
+        form(method='POST' action='/users')
+          div.form-group
+            label(for='id') ID:
+            input#id.form-control(type='number', placeholder='100' name='id')
+          div.form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', placeholder='fatma' name='name')
+          
+          div.form-group
+            label(for='age') Age:
+            input#age.form-control(type='number', placeholder='1' name='age')
+          
+          button.btn.btn-primary(type='submit') Add User

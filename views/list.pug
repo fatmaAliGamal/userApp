@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Users List
+        a(href='/users/new' class="button btn.btn-primary") Add
+        #table-wrapper
+          table#desc
+            tr
+              th ID
+              th Name
+              th Age
+              th Update
+              th Delete
+            each user in users
+              tr
+                td #{user.id}
+                td #{user.name}
+                td #{user.age}
+                td
+                    a(href='/users/' + user.id + '/edit') Edit 
+                td
+                    a(href='/users/' + user.id + '/delete') Delete
+    
+    
